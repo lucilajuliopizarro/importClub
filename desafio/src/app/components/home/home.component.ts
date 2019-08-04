@@ -11,8 +11,7 @@ export class HomeComponent implements OnInit {
 
   constructor(private http:HttpClient ) {
 
-    console.log('Constructor del Home hechos');
-    this.http.get('https://testapi.io/api/hilderh//product/all')
+    this.http.get('https://api.myjson.com/bins/1byugl')
       .subscribe((resp:any) =>{
         this.productos = resp;
         console.log(resp);

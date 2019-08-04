@@ -1,19 +1,17 @@
 <h3>Productos <small>Importados y en Stock</small></h3>
 <hr>
 
-<ul>
-  <li *ngFor="let product of Productos">
-    <pre>{{product | json }}</pre>
 
-  </li>
-</ul>
+    
+
+
 <div class="card-columns">
-    <div class="card" >
-        <img class="card-img-top img-fluid" src = './assets/img/silla.jpg ' class="card-img-top" alt="Silla">
+    <div class="card" *ngFor="let product of productos" >
+        <img class="card-img-top img-fluid" [src] = ' product.img ' class="card-img-top" [alt]='product.detail'>
         <div class="card-block">
-          <h5 class="card-title">silla</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text"> Precio Import Club: ${{ product.importclub_price }}</p>
+          <p class="card-text"><del class="text-muted">Precio Retail: ${{ product.retail_price }}</del></p>
 
           <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
         </div>  
