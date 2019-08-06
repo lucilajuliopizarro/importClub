@@ -1,11 +1,21 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+//modulos del router de angular
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule }  from '@angular/core';
 
+//importar componentes
+import { HomeComponent } from './components/home/home.component';
+import { ProductoComponent } from './components/producto/producto.component';
 
-const routes: Routes = [];
+//array de rutas
+const routes: Routes = [
+  { path: 'home', component: HomeComponent },
+  { path: 'producto/:id', component: ProductoComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home'}
+];
 
+//exportar modulo del router
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

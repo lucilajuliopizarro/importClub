@@ -1,24 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+import { Form } from '../classes/interfa';
 
 
-@Injectable()
+
+@Injectable({
+  providedIn:'root'
+})
+
 export class ProductosService {
+  apiUrl = 'https://api.myjson.com/bins/1byugl'
 
-    constructor(private http: HttpClient){
+  productos: any[] = [];
 
-
-      this.http.get('https://testapi.io/api/hilderh//product/all')
-      .subscribe(prod => {
-        console.log(prod);
-      })
-
+  constructor(private _http:HttpClient) {  }
+    
+    getProductos(){
+      return this._http.get<Form[]>(this.apiUrl);      
     }
- 
-    
-    
         
-
-
 }

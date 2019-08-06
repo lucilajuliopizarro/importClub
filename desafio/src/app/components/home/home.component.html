@@ -1,19 +1,18 @@
 <h3>Productos <small>Importados y en Stock</small></h3>
-<hr>
-
-
-    
-
-
+<hr> 
 <div class="card-columns">
-    <div class="card" *ngFor="let product of productos" >
-        <img class="card-img-top img-fluid" [src] = ' product.img ' class="card-img-top" [alt]='product.detail'>
-        <div class="card-block">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text"> Precio Import Club: ${{ product.importclub_price }}</p>
-          <p class="card-text"><del class="text-muted">Precio Retail: ${{ product.retail_price }}</del></p>
 
-          <button type="button" class="btn btn-outline-primary btn-block">Ver mas...</button>
-        </div>  
+<div class="card" *ngFor = "let product of productos; let i = index">
+    <img [src]='product.img' class="card-img-top" alt="none">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p>Precio Retail: $<del> {{product.retail_price}}</del></p>
+      <p>Precio Import Club: ${{product.importclub_price}}</p>
+      
+      <button (click) = "verproducto(i)"
+      type = "button" class="btn btn-outline-primary btn-block">
+      Ver más...
+    </button>
     </div>
+  </div>
 </div>
