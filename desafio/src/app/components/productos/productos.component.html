@@ -1,0 +1,20 @@
+<h3>Productos <small>Importados y en Stock</small></h3>
+<hr> 
+<div class="card-columns">
+
+<div class="card" *ngFor = "let product of productos; let i = index">
+    <img [src]='product.img' class="card-img-top" alt="none">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p>Precio Retail: $<del> {{product.retail_price}}</del></p>
+      <p>Precio Import Club: ${{product.importclub_price}}</p>
+      
+<!-- <a [routerLink]="['/producto',i]" class="btn btn-outline-primary">Ver más ...</a> -->
+
+      <button (click) = "verProducto(i)"
+      type = "button" class="btn btn-outline-primary btn-block">
+      Ver más...
+    </button>
+    </div>
+  </div>
+</div>

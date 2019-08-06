@@ -1,18 +1,25 @@
-<h3>Productos <small>Importados y en Stock</small></h3>
-<hr> 
 <div class="card-columns">
+    <div class="card">
+        <img src="/assets/img/cocina.jpg" class="card-img-top" alt="Cocina">
+        <div class="card-body">
+          <h5 class="card-title">Cocina</h5>
+          <a [routerLink]="['/productos']" class="btn btn-outline-primary  btn-block">Ver más ...</a>
+        </div>
+      </div>
 
-<div class="card" *ngFor = "let product of productos; let i = index">
-    <img [src]='product.img' class="card-img-top" alt="none">
-    <div class="card-body">
-      <h5 class="card-title">{{product.name}}</h5>
-      <p>Precio Retail: $<del> {{product.retail_price}}</del></p>
-      <p>Precio Import Club: ${{product.importclub_price}}</p>
-      
-      <button (click) = "verproducto(i)"
-      type = "button" class="btn btn-outline-primary btn-block">
-      Ver más...
-    </button>
-    </div>
-  </div>
+      <div class="card">
+        <img src="/assets/img/computacion.jpg" class="card-img-top" alt="Computacion">
+        <div class="card-body">
+          <h5 class="card-title">Computacion</h5>
+          <a [routerLink]="['/productos']" class="btn btn-outline-primary  btn-block">Ver más ...</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="/assets/img/Fotografia.jpg" class="card-img-top" alt="Fotografia">
+        <div class="card-body">
+          <h5 class="card-title">Fotografia</h5>
+          <a [routerLink]="['/productos']" class="btn btn-outline-primary  btn-block">Ver más ...</a>
+        </div>
+      </div>
 </div>

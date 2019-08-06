@@ -1,21 +1,20 @@
-//modulos del router de angular
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule }  from '@angular/core';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
-//importar componentes
 import { HomeComponent } from './components/home/home.component';
-import { ProductoComponent } from './components/producto/producto.component';
+import { ProductosComponent } from './components/productos/productos.component';
+import { ProductoComponent} from './components/producto/producto.component';
 
-//array de rutas
+
 const routes: Routes = [
-  { path: 'home', component: HomeComponent },
-  { path: 'producto/:id', component: ProductoComponent },
-  { path: '**', pathMatch: 'full', redirectTo: 'home'}
+  {path: 'home', component: HomeComponent },
+  {path: 'productos', component: ProductosComponent},
+  {path: 'producto/:id', component: ProductoComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'home'}
 ];
 
-//exportar modulo del router
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

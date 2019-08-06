@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
-import { Form } from '../classes/interfa';
+import { Form } from '../../classes/interfa';
 
 
 
@@ -9,7 +9,7 @@ import { Form } from '../classes/interfa';
 })
 
 export class ProductosService {
-  apiUrl = 'https://api.myjson.com/bins/1byugl'
+  apiUrl = 'https://api.myjson.com/bins/1byugl';
 
   productos: any[] = [];
 
@@ -18,5 +18,8 @@ export class ProductosService {
     getProductos(){
       return this._http.get<Form[]>(this.apiUrl);      
     }
-        
+       
+    getProduct(idx: string){
+      return this.productos[idx];
+    }
 }

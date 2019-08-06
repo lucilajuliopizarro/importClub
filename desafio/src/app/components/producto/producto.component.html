@@ -1,3 +1,18 @@
-<a> PRODUCTO PRESENTE!!!</a>
+<h1 class= "animated fadeIn" > {{product.name}}</h1>
+<hr>
+<div class = "row animated fadeIn fast">
 
+<div class="col.md-4">
+
+    <img [src]="product.img" class="img-fluit" [alt]="product.name">
+    <br><br>
+    <a [routerLink]="['/productos']" class="btn btn-outline-danger btn-block">Regresar</a>
+</div>
+
+</div>
+
+<div class = "col-md-8">
+    <h3>{{product.name}}</h3>
+    <hr>
+</div>
 

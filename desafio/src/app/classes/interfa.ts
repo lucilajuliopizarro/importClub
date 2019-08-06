@@ -1,4 +1,4 @@
-export class Form{
+export class Form {
     name: string;
     detail: string;
     img: string;
